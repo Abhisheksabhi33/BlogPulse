@@ -23,8 +23,11 @@ const register = asyncErrorWrapper (async  (req,res,next) => {
     const newUser = await User.create({
         username,
         email,
-        password
+        password,
+        photo: "https://res.cloudinary.com/dsxyzdqvo/image/upload/v1687872471/user_myn2zw.png"
     })
+
+
     
     sendToken(newUser ,201,res)
   

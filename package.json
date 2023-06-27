@@ -4,13 +4,14 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js "
+        "start": "nodemon server.js "
     },
     "keywords": [],
     "author": "Gilbert Hutapea ",
     "license": "ISC",
     "dependencies": {
         "bcryptjs": "^2.4.3",
+        "cloudinary": "^1.37.3",
         "cors": "^2.8.5",
         "dotenv": "^15.0.0",
         "express": "^4.17.2",

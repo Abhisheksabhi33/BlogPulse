@@ -66,7 +66,7 @@ const Header = () => {
 
                                     : 
 
-                                    <img src={`/userPhotos/${activeUser.photo}`} alt={activeUser.username} />
+                                    <img style={{width: "2.6rem", height: "2.6rem", margin: ".6rem"}} src={activeUser.photo} alt={activeUser.username} />
 
                                 }
 

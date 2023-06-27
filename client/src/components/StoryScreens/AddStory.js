@@ -38,7 +38,7 @@ const AddStory = () => {
         try {
             const { data } = await axios.post("/story/addstory", formdata, config)
             setSuccess('Add story successfully ')
-
+            
             clearInputs()
             setTimeout(() => {
                 setSuccess('')

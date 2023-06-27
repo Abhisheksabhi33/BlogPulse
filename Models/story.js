@@ -23,8 +23,16 @@ const StorySchema = new mongoose.Schema({
         minlength: [10, "Please provide a content least 10 characters "],
     },
     image: {
-        type: String,
-        default: "default.jpg"
+        type: Object,
+        url: { 
+            type: String,
+            default: "https://res.cloudinary.com/dsxyzdqvo/image/upload/v1683319930/Group-372_tojvfx.png"
+
+        },
+        public_id: {
+            type: String,
+            required: true
+        }
     },
     readtime: {
         type: Number,

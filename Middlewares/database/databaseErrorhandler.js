@@ -11,7 +11,7 @@ const checkStoryExist = asyncErrorWrapper(async (req,res,next) => {
     })
 
     if(!story) {
-        return next(new CustomError("There is no such story with that slug ",400))
+        return next(new CustomError("There is no such Articles with that slug ",400))
     }
 
     next() ; 

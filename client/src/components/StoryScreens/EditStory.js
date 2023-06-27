@@ -14,8 +14,8 @@ const EditStory = () => {
     const imageEl = useRef(null)
     const [loading, setLoading] = useState(true)
     const [story, setStory] = useState({})
-    const [image, setImage] = useState('')
-    const [previousImage, setPreviousImage] = useState('')
+    const [imageURL, setImageURL] = useState('')
+    const [previousImageURL, setPreviousImageURL] = useState('')
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [success, setSuccess] = useState('')
@@ -31,24 +31,26 @@ const EditStory = () => {
                 setStory(data.data)
                 setTitle(data.data.title)
                 setContent(data.data.content)
-                setImage(data.data.image)
-                setPreviousImage(data.data.image)
+                setImageURL(data.data.image.url)
+                setPreviousImageURL(data.data.image.url)
                 setLoading(false)
             }
             catch (error) {
+                setLoading(false)
                 navigate("/")
             }
         }
         getStoryInfo()
-    }, [])
+    }, [ navigate, slug, config])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formdata = new FormData()
         formdata.append("title", title)
         formdata.append("content", content)
-        formdata.append("image", image)
-        formdata.append("previousImage", previousImage)
+        formdata.append("image", imageEl.current.files[0])  
+        formdata.append("previousImageURL", previousImageURL)   
+
 
         try {
             const { data } = await axios.put(`/story/${slug}/edit`, formdata, config)
@@ -108,14 +110,13 @@ const EditStory = () => {
                                 <div class="absolute">
                                     Currently Image
                                 </div>
-                                <img src={`http://localhost:5000/storyImages/${previousImage}`} alt="storyImage" />
+                                <img src={previousImageURL} alt="storyImage" />
                             </div>
                             <div class="StoryImageField">
                                 <AiOutlineUpload />
                                 <div class="txt">
 
-                                    {image === previousImage ? "    Change the image in your story " :
-                                        image.name}
+                                    {imageURL === previousImageURL ? "    Change the image in your story " : "    Change the image in your story "}
 
                                 </div>
                                 <input
@@ -123,7 +124,7 @@ const EditStory = () => {
                                     type="file"
                                     ref={imageEl}
                                     onChange={(e) => {
-                                        setImage(e.target.files[0])
+                                        setImageURL(URL.createObjectURL(e.target.files[0]))
                                     }}
                                 />
                             </div>

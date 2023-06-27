@@ -9,6 +9,8 @@ const ReadListStoryItem = ({ story, editDate }) => {
         return trimmedString
     }
 
+    console.log(story.image);
+
     return (
 
         <div className="readList-story-item">
@@ -72,7 +74,7 @@ const ReadListStoryItem = ({ story, editDate }) => {
 
             <section>
                 <div className="story-Image-Wrap">
-                    <img src={`/storyImages/${story.image}`} alt={story.title} width="180px" />
+                    <img src={story.image.url} alt={story.title} width="180px" />
                 </div>
 
             </section>
