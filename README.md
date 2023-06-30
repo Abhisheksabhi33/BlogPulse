@@ -13,6 +13,25 @@ This project is a MERN (MongoDB, Express.js, React.js, Node.js) stack web applic
 - Read and Comment on Blog Posts: Visitors can read published blog posts and leave comments on them.
 - Trending Technologies and News: The focus of the blog posts is on trending technologies and news, providing valuable insights to the readers.
 
+  
+
+  ![blogpulse-1](https://github.com/Abhisheksabhi33/BlogPulse/assets/87107030/f4233b6b-7944-43a4-80c0-7c288ef83dfe)
+
+
+
+
+
+
+  ![blog-pulse-2](https://github.com/Abhisheksabhi33/BlogPulse/assets/87107030/56551892-959b-4468-8533-2928550acd75)
+
+
+
+
+  ![blogpulse-4](https://github.com/Abhisheksabhi33/BlogPulse/assets/87107030/6172234f-1b58-4e56-bf70-5941c1ee3e9d)
+
+
+
+
 ## Technologies Used
 
 - MongoDB: A NoSQL database used for storing user information, blog posts, and comments.
